@@ -159,10 +159,7 @@ class DropUnecessaryFeatures(BaseEstimator, TransformerMixin):
         X = X.copy()
         X = X.drop(self.variables, axis=1)
 
-        return Ximport numpy as np
-import pandas as pd
-from sklearn.base import BaseEstimator, TransformerMixin
-
+        return X
 
 class CategoricalImputer(BaseEstimator, TransformerMixin):
     """Categorical data missing value imputer."""
