@@ -18,7 +18,7 @@ def save_pipeline(*, pipeline_to_persist) -> None:
     """Persist the pipeline."""
 
 
-    save_file_name = "regression_model.pkl"
+    #save_file_name = "regression_model.pkl"
     """Persist the pipeline.
     Saves the versioned model, and overwrites any previous
     saved models. This ensures that when the package is
@@ -34,6 +34,7 @@ def save_pipeline(*, pipeline_to_persist) -> None:
     joblib.dump(pipeline_to_persist, save_path)
     _logger.info(f"saved_pipeline: {save_file_name}")
 
+
 def load_pipeline(*, file_name: str) -> Pipeline:
     """Load a persisted pipeline."""
 
@@ -41,6 +42,7 @@ def load_pipeline(*, file_name: str) -> Pipeline:
 
     trained_model = joblib.load(filename = file_path)
     return trained_model
+
 
 def remove_old_pipelines(*, files_to_keep):
     """
