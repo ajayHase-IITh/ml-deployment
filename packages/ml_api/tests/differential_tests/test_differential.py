@@ -9,7 +9,7 @@ import pytest
 
 from api import config
 
-
+@pytest.mark.skip
 @pytest.mark.differential
 def test_model_prediction_differential(
         *,
@@ -26,7 +26,7 @@ def test_model_prediction_differential(
     multiple_test_input = test_data[99:600]
 
     # When
-   test_data = load_dataset(file_name=model_config.TESTING_DATA_FILE)
+    test_data = load_dataset(file_name=f'{save_file}')
     multiple_test_input = test_data[99:600]
 
     # Then
