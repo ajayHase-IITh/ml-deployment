@@ -18,16 +18,18 @@ def test_model_prediction_differential(
     This test compares the prediction result similarity of
     the current model with the previous model's results.
     """
+
     # Given
     # Load the saved previous model predictions
     previous_model_df = pd.read_csv(f'{config.PACKAGE_ROOT}/{save_file}')
     previous_model_predictions = previous_model_df.predictions.values
-    test_data = load_dataset(file_name=f'{save_file}')
+
+    test_data = load_dataset(file_name=model_config.TESTING_DATA_FILE)
     multiple_test_input = test_data[99:600]
 
     # When
-    test_data = load_dataset(file_name=model_config.TESTING_DATA_FILE)
-    multiple_test_input = test_data[99:600]
+    current_result = make_prediction(input_data=multiple_test_input)
+    current_model_predictions = current_result.get('predictions')
 
     # Then
     # diff the current model vs. the old model
