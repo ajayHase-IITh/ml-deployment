@@ -9,7 +9,6 @@ from api import config
 def capture_predictions(
         *,
         save_file: str = 'test_data_predictions.csv'):
-def capture_predictions() -> None:
     """Save the test data predictions to a CSV."""
 
     save_file = 'test_data_predictions.csv'
