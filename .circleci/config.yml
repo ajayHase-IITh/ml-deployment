@@ -126,7 +126,7 @@ jobs:
       - run: 
           name: Release to Heroku
           command: |
-            heroku container:release web --app $HEROKU_APP_NAME
+            heroku container:release web --app ml-app-20
 
 
 
